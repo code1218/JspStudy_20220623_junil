@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+* {
+	font-size: 14px;
+	font-weight: 400;
+	color: #141414;
+	
+	margin: 0px;
+	padding: 0px;
+	
+	box-sizing: border-box;	
+}
+
+ul {
+	list-style-type: none;
+}

@@ -9,7 +9,8 @@
 <body>
 	<div id="container">
 		<h1>회원가입</h1>
-		<form action="">
+		<!-- action: 요청 메세지를 입력하는 곳 -->
+		<form action="/signup" method="post">
 			<table>
 				<tr>
 					<th>이름</th>			

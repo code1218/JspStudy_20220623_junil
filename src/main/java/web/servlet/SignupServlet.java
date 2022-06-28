@@ -7,6 +7,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import service.UserService;
+import service.UserServiceImpl;
+import web.dto.SignupReqDto;
+
 
 /*
  * 데이터 요청 방법
@@ -20,24 +24,33 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/signup")
 public class SignupServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	private final UserService userService;
+	
+	public SignupServlet() {
+		userService = new UserServiceImpl();
+	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//request.getRequestDispatcher("/WEB-INF/views/signup.jsp").forward(request, response);
-		System.out.println(request.getParameter("name"));
-		System.out.println(request.getParameter("email"));
-		System.out.println(request.getParameter("username"));
-		System.out.println(request.getParameter("password"));
+		request.getRequestDispatcher("/WEB-INF/views/signup.jsp").forward(request, response);
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("회원가입 요청");
 		
-		System.out.println(request.getParameter("name"));
-		System.out.println(request.getParameter("email"));
-		System.out.println(request.getParameter("username"));
-		System.out.println(request.getParameter("password"));
+		SignupReqDto signupReqDto = SignupReqDto.builder()
+				.name(request.getParameter("name"))
+				.email(request.getParameter("email"))
+				.username(request.getParameter("username"))
+				.password(request.getParameter("password"))
+				.build();
 		
+		try {
+			userService.createUser(signupReqDto);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }

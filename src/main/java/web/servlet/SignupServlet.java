@@ -47,7 +47,12 @@ public class SignupServlet extends HttpServlet {
 				.build();
 		
 		try {
-			userService.createUser(signupReqDto);
+			if(userService.createUser(signupReqDto)) {
+				System.out.println("회원가입 성공");
+				
+			}else {
+				System.out.println("회원가입 실패");
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -14,6 +14,11 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	@Override
+	public boolean checkUsername(String username) throws Exception {
+		return userDao.findUserByUsername(username) != null;
+	}
+	
+	@Override
 	public boolean createUser(SignupReqDto signupReqDto) throws Exception {
 		return userDao.save(signupReqDto.toEntity()) > 0;
 	}

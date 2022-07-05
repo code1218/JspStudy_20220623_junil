@@ -40,5 +40,15 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		return false;
 	}
+	
+	@Override
+	public User loadUser(String username, String password) throws Exception {
+		User user = userDao.findUserByUsername(username);
+		if(user == null) {
+			return null;
+		}else {
+			return user.getPassword().equals(password) ? user : null;
+		}
+	}
 
 }

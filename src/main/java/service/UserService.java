@@ -1,5 +1,6 @@
 package service;
 
+import domain.entity.User;
 import web.dto.SignupReqDto;
 
 public interface UserService {
@@ -8,5 +9,7 @@ public interface UserService {
 	public void getUser() throws Exception;
 	public boolean updateUser() throws Exception;
 	public boolean deleteUser() throws Exception;
+	
+	public User loadUser(String username, String password) throws Exception;
 	
 }

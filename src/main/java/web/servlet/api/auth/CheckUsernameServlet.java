@@ -1,6 +1,8 @@
 package web.servlet.api.auth;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,9 +25,10 @@ public class CheckUsernameServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String username = request.getParameter("username");
 				
-		response.setContentType("text/plain;charset=UTF-8");
+		response.setContentType("text/html;charset=UTF-8");
 		try {
-			response.getWriter().print(userService.checkUsername(username));
+			response.getWriter().println(userService.checkUsername(username));
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

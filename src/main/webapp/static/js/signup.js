@@ -26,7 +26,9 @@ submitButton.onclick = () => {
 		return;
 	}
 	
-	
+	if(!signupFlag.includes(false)){
+		submit();
+	}
 }
 
 usernameInput.onblur = () => {
@@ -61,7 +63,14 @@ function submit() {
 		},
 		dataType: "text",
 		success: (response) => {
-			
+			if(response == "true"){
+				alert("축하합니다!\n회원가입에 성공하였습니다.");
+				location.replace("/signin");
+			}else{
+				alert("회원가입에 실패하였습니다.\n다시 시도해 주세요.");
+				usernameCheckMsg.innerHTML = ``;
+				document.querySelector("form").reset();
+			}
 		},
 		error: errorMessage
 	});

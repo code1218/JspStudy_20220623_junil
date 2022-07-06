@@ -23,8 +23,6 @@ public class CharacterEncodingFilter extends HttpFilter implements Filter {
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		//전처리
-		System.out.println("전처리");
-		
 		HttpServletRequest httpRequest = (HttpServletRequest) request;
 		
 		if(!httpRequest.getMethod().equalsIgnoreCase("get")) {
@@ -34,7 +32,6 @@ public class CharacterEncodingFilter extends HttpFilter implements Filter {
 		
 		chain.doFilter(request, response); //서블릿
 		//후처리
-		System.out.println("후처리");
 	}
 
 	public void init(FilterConfig fConfig) throws ServletException {

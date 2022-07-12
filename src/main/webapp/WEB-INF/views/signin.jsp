@@ -15,11 +15,16 @@
 			<table>
 				<tr>
 					<th>사용자이름</th>			
-					<td><input type="text" class="username-input" name="username"></td>			
+					<td><input type="text" class="username-input" name="username" value="${username}"></td>			
 				</tr>
 				<tr>
 					<th>비밀번호</th>			
-					<td><input type="password" name="password"></td>			
+					<td><input type="password" name="password" value="${password}"></td>			
+				</tr>
+				<tr>
+					<td colspan="2">
+						<input type="checkbox" id="maintain-flag" checked="${maintain}"><label for="maintain-flag">로그인 정보 유지</label>
+					</td>
 				</tr>
 			</table>
 			<button type="button" class="submit-button">로그인</button>

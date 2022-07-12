@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import config.ServletContextConfig;
 import domain.entity.User;
 
 /**
@@ -20,7 +21,6 @@ import domain.entity.User;
  */
 @WebFilter("/*")
 public class AuthenticationFilter extends HttpFilter implements Filter {
-       
 	private static final long serialVersionUID = 1L;
 
     public AuthenticationFilter() {
@@ -39,10 +39,20 @@ public class AuthenticationFilter extends HttpFilter implements Filter {
 				return;
 			}
 		}
+		req.getServletContext();
 		
 		chain.doFilter(request, response);
 	}
 
-	public void init(FilterConfig fConfig) throws ServletException {}
+	public void init(FilterConfig fConfig) throws ServletException {
+		fConfig.getServletContext();
+	}
 
 }
+
+
+
+
+
+
+

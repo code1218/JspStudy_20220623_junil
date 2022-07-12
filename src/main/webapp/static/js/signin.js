@@ -1,6 +1,7 @@
 const inputItems = document.querySelectorAll("table input");
 const submitButton = document.querySelector(".submit-button");
 const signupButton = document.querySelector(".signup-button");
+const maintainFlag = document.querySelector("#maintain-flag");
 
 signupButton.onclick = () => {
 	location.href = "/signup";
@@ -25,7 +26,8 @@ function submit() {
 		url: "/signin",
 		data: {
 			username: inputItems[0].value,
-			password: inputItems[1].value
+			password: inputItems[1].value,
+			maintain: maintainFlag.checked
 		},
 		dataType: "text",
 		success: (response) => {

@@ -1,5 +1,6 @@
 package service;
 
+import config.ServletContextConfig;
 import domain.dao.UserDao;
 import domain.dao.UserDaoImpl;
 import domain.entity.User;
@@ -10,7 +11,7 @@ public class UserServiceImpl implements UserService {
 	private final UserDao userDao;
 	
 	public UserServiceImpl() {
-		userDao = new UserDaoImpl();
+		userDao = ServletContextConfig.getInstance().getUserDao();
 	}
 	
 	@Override

@@ -4,4 +4,6 @@
     <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/tomcat/tomcat-servlet-api/9.0.64/tomcat-servlet-api-9.0.64.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/projectlombok/lombok/1.18.24/lombok-1.18.24.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/javax/servlet/jstl/1.2/jstl-1.2.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/mariadb/jdbc/mariadb-java-client/2.7.6/mariadb-java-client-2.7.6.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/com/google/code/gson/gson/2.9.0/gson-2.9.0.jar" enabled="true" runInBatchMode="false"/>
 </factorypath>

@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import config.ServletContextConfig;
 import service.UserService;
-import service.UserServiceImpl;
 import web.dto.SignupReqDto;
 
 
@@ -30,7 +30,7 @@ public class SignupServlet extends HttpServlet {
 	private final UserService userService;
 	
 	public SignupServlet() {
-		userService = new UserServiceImpl();
+		userService = ServletContextConfig.getInstance().getUserService();
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
